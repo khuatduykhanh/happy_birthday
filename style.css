@@ -5,6 +5,7 @@
 	background-color:#E7E7E8 ;
 	border: none;
 }
+
 .anh-1 {
 	margin: auto;
 	height: 200px;
@@ -35,4 +36,14 @@
 	margin-top: 50px;
 	font-size: 50px;
 	color: red;
+	font-family: 'Titillium Web', sans-serif;
+
+}
+.anh{
+	text-align: center;
+	margin-top: 30px;
+}
+.anh > img {
+	width: 300px;
+	
 }
