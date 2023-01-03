@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>lịch</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+</head>
+<body>
+ 		
+		<img href="./anh1.jpg" class="img">
+ 		<div id="dong_ho" class="clock" onload="gettime()"> </div>
+
+ 		<div id= "ngay" onload="getday()"></div>
+ 		<div class = "trang1"><h2 class= "trang">Happy Birthday To You</h2></div>
+ 		<script type="text/javascript">
+ 			var anh_1 = document.getElementById('anh_1')
+ 			var images = ["https://anhdepblog.com/wp-content/uploads/2018/01/hinh-nen-bau-troi-day-sao-dep-65.jpg" ]
+ 				var today = new Date();
+ 				var hrs =today.getHours();
+ 					if(hrs >=18 || hrs<=6)
+ 				 	anh_1.src = images
+ 			var good = document.getElementById("good")
+ 			   if(hrs>=6 && hrs<12){
+ 			   		good.innerHTML = "GOOD MORNING"
+ 			   		good.style.color = "blue"
+                }
+   				else 
+   					if(hrs>=12 && hrs<18){
+   					good.innerHTML = "GOOD AFTERNOON"
+   					}
+   					else{
+   					good.innerHTML = "GOOD EVENING"
+   					good.style.color = "black"
+ 					}
+ 		</script>
+ 		<!-- đồng hồ -->
+ 		<script type="text/javascript">
+ 			function gettime() {
+ 			var dong_ho = document.getElementById("dong_ho")
+ 			var date = new Date();
+ 			var h = date.getHours();
+ 			var m =date.getMinutes();
+ 			var s = date.getSeconds();
+ 			var session = "AM"
+ 			 if(h>=12 && h<=23){
+ 			 	session = "PM"}
+ 			 h = (h<10)?'0'+h:h
+ 			 m = (m<10)?'0'+m:m
+ 			 s = (s<10)?'0'+s:s
+ 			 var time = h+':'+m+':'+s+" "+session
+ 			 dong_ho.innerText = time;
+ 			 setTimeout(gettime,1000)
+
+ 			 }
+ 			 function getday() {
+ 			 	var ngay = document.getElementById("ngay")
+ 			 	var date = new Date();
+ 			 	var d = date.getDate();
+ 				var m =date.getMonth() + 1;
+ 				var y = date.getFullYear();
+ 				var ngayh = "0"+d+"/"+"0"+m+"/"+y
+ 				ngay.innerText = ngayh
+ 				setTimeout(gettime,1000)
+ 			 }
+ 			
+ 			 gettime();
+ 			 getday();
+
+ 		</script>
+</body>
+</html>
